@@ -41,6 +41,7 @@ WORDPRESS_API_URL=https://www-stg.koov.io/column/index.php?graphql
 
 ### Step. Run Next.js in development mode
 ```bash
+cd app
 yarn install
 yarn dev
 ```
