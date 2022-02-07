@@ -4,10 +4,6 @@ We will replace the existing wordpress site we have with a static site using Nex
 - Curren tSite：https://www.koov.io/column/
 
 ## Points to note
-- This repository has been set up using the official Next.js Wordpress example project.
-    - https://nextjs.org/docs/basic-features/pages
-- Infrastructure and deployment environment are under consideration here.
-
 - The base of this repository has been set up using the official Wordpress example from Next.js. So I'd like to optimize file and directory for this project as appropriate.
     - https://nextjs.org/docs/basic-features/pages
 - Infrastructure and deployment environment is under consideration here.
