@@ -31,8 +31,8 @@ Your `.env.local` file should look like this:
 WORDPRESS_API_URL=https://www-stg.koov.io/column/index.php?graphql
 
 # Only required if you want to enable preview mode
-# WORDPRESS_AUTH_REFRESH_TOKEN=
-# WORDPRESS_PREVIEW_SECRET=
+WORDPRESS_AUTH_REFRESH_TOKEN=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd3d3LXN0Zy5rb292LmlvXC9jb2x1bW4iLCJpYXQiOjE2NDQ5MTAxMDEsIm5iZiI6MTY0NDkxMDEwMSwiZXhwIjoxNjc2NDQ2MTAxLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIiwidXNlcl9zZWNyZXQiOiJncmFwaHFsX2p3dF82MjBiNTQyYzRjMjMwIn19fQ.AajLPqAWo6250IWl967pejz4nVKW3MtGAZWVW2Aw9yQ
+WORDPRESS_PREVIEW_SECRET=kMJXXxR4fB
 ```
 
 ### Step. Run Next.js in development mode
