@@ -1,0 +1,90 @@
+.partners-section {
+  padding: 68px 0 26px;
+}
+
+.partners-section-header {
+  width: 310px;
+}
+
+.prefectures-content {
+  max-width: 610px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.area-name-partner {
+  color: #717171;
+  width: 137px;
+  height: 32px;
+  border: 1px solid #E8E8E8;
+  justify-content: center;
+}
+
+.list-prefectures {
+  padding-left: 6px;
+  width: calc(100% - 137px);
+  color: #577089;
+  line-height: 32px;
+  flex-wrap: wrap;
+}
+
+.prefecture-name {
+  padding-left: 20px;
+}
+
+.prefectures-wrapper:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+
+@media screen and (max-width: 991px) {
+  .partners-section-header {
+    width: 286px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .partners-section-header {}
+
+  .area-name-partner {
+    height: 55px;
+    width: 100%;
+    border: none;
+    color: #577089;
+    padding: 0px 15px 0 20px;
+    justify-content: space-between;
+  }
+
+  .prefectures-content {
+    border: 2px solid #CEDADE;
+    border-radius: 6px;
+  }
+
+  .prefectures-wrapper {
+    flex-direction: column;
+  }
+
+  .prefectures-wrapper:not(:last-child) {
+    border-bottom: 2px solid #CEDADE;
+    margin-bottom: 0;
+  }
+
+  .list-prefectures {
+    width: 100%;
+    padding-left: 0px;
+    display: none;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .prefecture-name {
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #F0F0F0;
+    height: 55px;
+  }
+
+  .list-prefectures>.prefecture-name:first-child {
+    border-top: 2px solid #CEDADE;
+  }
+}

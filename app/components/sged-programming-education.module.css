@@ -1,0 +1,63 @@
+.sged-programming-education-box {
+  background-color: #edf6f8;
+  padding: 47px 0 81px;
+}
+
+.banners-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner-image {
+  width: 450px;
+  height: 80px;
+}
+
+.header {
+  width: 586px;
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    width: 540px;
+  }
+
+  .banner-image {
+    width: 360px;
+    height: 64px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .header {
+    width: 480px;
+  }
+
+  .banner-image {
+    width: 344px;
+    height: 62px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sged-programming-education-box {
+    padding: 32px 0 40px;
+  }
+
+  .banners-container {
+    flex-direction: column;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .banner-image:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  .header {
+    width: 100%;
+  }
+}

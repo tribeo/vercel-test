@@ -1,6 +1,148 @@
 @tailwind base;
 
 /* Write your own custom base styles here */
+body {
+  min-width: 320px;
+  font-family: "Lato",
+    "游ゴシック体",
+    "Yu Gothic",
+    "YuGothic",
+    "ヒラギノ角ゴシック Pro",
+    "Hiragino Kaku Gothic Pro",
+    "メイリオ",
+    "Meiryo",
+    "ＭＳ Ｐゴシック",
+    "MS PGothic",
+    "sans-serif";
+  font-weight: 500px;
+  color: #3D3D3D;
+}
+
+.image-contain {
+  object-fit: contain;
+}
+
+.image-cover {
+  object-fit: cover;
+}
+
+.inner {
+  width: 940px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.kov-btn {
+  margin-left: auto;
+  margin-right: auto;
+  height: 55px;
+  background-color: #ffffff;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0px 0px 0.8px rgb(0 0 0 / 12%);
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
+  letter-spacing: 0.8px;
+  color: #4B6A87;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.section-header {
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 0.6px;
+  line-height: 45px;
+  margin-bottom: 28px;
+}
+
+.close {
+  display: none !important;
+}
+
+.open {
+  display: block !important;
+}
+
+.sony-header>a {
+  padding: 12px 15px;
+  justify-content: flex-end;
+}
+
+.pc-only {
+  display: flex;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .inner {
+    width: 760px;
+  }
+
+  .section-header {
+    font-size: 28px;
+    line-height: 39.2px;
+    letter-spacing: 0.56px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .inner {
+    width: 724px;
+  }
+
+  .section-header {
+    font-size: 26px;
+    line-height: 36.4px;
+    letter-spacing: 0.52px;
+    margin-bottom: 22px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .inner {
+    width: 100%;
+    padding: 0;
+    max-width: 370px
+  }
+
+  .sony-header>a {
+    padding: 7.5px 10px;
+  }
+
+  .pc-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+  }
+
+  .section-header {
+    width: 100%;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (max-width: 401px) {
+  .inner {
+    width: 100%;
+    padding: 0 15px;
+    max-width: unset
+  }
+}
 
 /* Start purging... */
 @tailwind components;
@@ -43,23 +185,27 @@
 .wp-block-image img {
   @apply max-w-full mt-2;
 }
+
 .wp-block-image.aligncenter {
   @apply text-center;
 }
+
 .wp-block-image.alignfull img,
 .wp-block-image.alignwide img {
   @apply w-full;
 }
+
 .wp-block-image .alignleft,
 .wp-block-image .alignright,
 .wp-block-image .aligncenter,
 .wp-block-image.is-resized {
   @apply table ml-0 mr-0;
 }
-.wp-block-image .alignleft > figcaption,
-.wp-block-image .alignright > figcaption,
-.wp-block-image .aligncenter > figcaption,
-.wp-block-image.is-resized > figcaption {
+
+.wp-block-image .alignleft>figcaption,
+.wp-block-image .alignright>figcaption,
+.wp-block-image .aligncenter>figcaption,
+.wp-block-image.is-resized>figcaption {
   @apply table-caption;
 
   caption-side: bottom;
@@ -68,9 +214,11 @@
 .wp-block-image .alignleft {
   @apply float-left mr-4;
 }
+
 .wp-block-image .alignright {
   @apply float-right ml-4;
 }
+
 .wp-block-image .aligncenter {
   @apply m-auto;
 }

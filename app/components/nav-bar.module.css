@@ -1,0 +1,135 @@
+.categories-nav-box {
+  max-width: 1200px;
+  margin: auto;
+  font-size: 17px;
+  letter-spacing: 0.42px
+}
+
+.category-nav-item {
+  height: 100%;
+  padding: 0 20px;
+  align-items: center;
+  display: inline-flex;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-nav-item:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.category-nav-item:hover::before {
+  transform: translateY(0);
+}
+
+.category-nav-item::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #4b6a87;
+  height: 3px;
+  transform: translateY(3px);
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.nav-header {
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  align-items: center;
+  padding: 18px 33px;
+}
+
+.nav-logo {
+  width: 118px;
+}
+
+.nav-inner {
+  width: 940px;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-wrapper {
+    height: 97px;
+    display: block;
+    max-width: inherit;
+    position: absolute;
+    top: 710px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background-color: white;
+    border-radius: 6px 6px 0px 0px;
+  }
+
+  .nav-inner {
+    margin: auto;
+    align-items: center;
+    border-bottom: 1px solid #E4E4E4;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-wrapper {
+    max-width: 990px;
+  }
+
+  .nav-inner {
+    width: 760px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .nav-wrapper {
+    max-width: 766px;
+  }
+
+  .nav-inner {
+    width: 724px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .categories-nav-box {
+    background-color: #F9F9F9;
+    font-size: 18px;
+    letter-spacing: 0.45px;
+    line-height: 27px;
+  }
+
+  .nav-header {
+    padding: 0 15px;
+  }
+
+  .nav-logo {
+    width: 79px;
+  }
+
+  .nav-wrapper {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-wrapper.open {
+    max-height: 500px;
+  }
+
+  .nav-inner {
+    padding: 40px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-nav-item {
+    padding: 11px 20px 11px 0;
+  }
+}

@@ -1,0 +1,23 @@
+.large-banner {
+  height: 432px;
+}
+
+.top-header-text {
+  font-size: 15px;
+  line-height: 22px;
+  margin: 22px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .top-header-text {
+    font-size: 13px;
+    max-width: 310px;
+    margin: 18px 0 40px;
+    text-align: center;
+  }
+
+  .small-banner {
+    height: 249px;
+    z-index: -1;
+  }
+}

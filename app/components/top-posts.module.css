@@ -1,0 +1,66 @@
+.top-posts-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.view-more-btn {
+  margin-top: 72px;
+  width: 300px;
+}
+
+.top-posts-inner {
+  padding-top: 46px;
+  padding-bottom: 68px;
+}
+
+.news {
+  border-top: 1px solid #E4E4E4;
+}
+
+.top-posts-container-header {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.48px;
+  line-height: 36px;
+  margin-bottom: 2px;
+}
+
+.top-posts-container-sub-header {
+  font-size: 14px;
+  letter-spacing: 0.35px;
+  color: #717071;
+  text-align: center;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 767px) {
+  .top-posts-box {
+    flex-direction: column;
+  }
+
+  .top-posts-inner {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+
+  .view-more-btn {
+    margin: 0;
+    width: 100%;
+  }
+
+  .popular {
+    border-radius: 6px 6px 0px 0px;
+    margin-top: -36px;
+    background-color: #FFFFFF;
+    z-index: 1;
+  }
+
+  .top-posts-container-header {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    line-height: 36px;
+    margin-bottom: 2px;
+  }
+}
