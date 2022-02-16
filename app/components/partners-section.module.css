@@ -17,7 +17,7 @@
   color: #717171;
   width: 137px;
   height: 32px;
-  border: 1px solid #E8E8E8;
+  border: 1px solid #e8e8e8;
   justify-content: center;
 }
 
@@ -33,10 +33,25 @@
   padding-left: 20px;
 }
 
+.kov-link {
+  justify-content: space-between;
+}
+
+.icon-arrow-right {
+  display: block;
+  font-size: 20px;
+  transform: rotateZ(90deg);
+}
+
+.icon-plus,
+.icon-minus,
+.icon-arrow-right {
+  display: none;
+}
+
 .prefectures-wrapper:not(:last-child) {
   margin-bottom: 24px;
 }
-
 
 @media screen and (max-width: 991px) {
   .partners-section-header {
@@ -45,8 +60,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .partners-section-header {}
-
   .area-name-partner {
     height: 55px;
     width: 100%;
@@ -57,7 +70,7 @@
   }
 
   .prefectures-content {
-    border: 2px solid #CEDADE;
+    border: 2px solid #cedade;
     border-radius: 6px;
   }
 
@@ -66,8 +79,15 @@
   }
 
   .prefectures-wrapper:not(:last-child) {
-    border-bottom: 2px solid #CEDADE;
+    border-bottom: 2px solid #cedade;
     margin-bottom: 0;
+  }
+
+  .prefecture-name {
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid #f0f0f0;
+    height: 55px;
   }
 
   .list-prefectures {
@@ -77,14 +97,33 @@
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .prefecture-name {
-    justify-content: space-between;
-    padding: 0 20px;
-    border-bottom: 1px solid #F0F0F0;
-    height: 55px;
+  .list-prefectures > .prefecture-name:first-child {
+    border-top: 2px solid #cedade;
   }
 
-  .list-prefectures>.prefecture-name:first-child {
-    border-top: 2px solid #CEDADE;
+  .list-prefectures.open {
+    display: block;
+  }
+
+  .icon-plus,
+  .icon-minus {
+    font-size: 26px;
+  }
+
+  .icon-plus,
+  .icon-arrow-right {
+    display: block;
+  }
+
+  .icon-minus {
+    display: none;
+  }
+
+  .area-name-partner.active > .icon-plus {
+    display: none;
+  }
+
+  .area-name-partner.active > .icon-minus {
+    display: block;
   }
 }

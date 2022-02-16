@@ -5,8 +5,8 @@ export default function ScrollUp() {
 
   return (
     <div className="scroll-up-box" onClick={handleScrollUpClick}>
-      <div className="scroll-up-container">
-        <div className="btn-pagetop">
+      <div className="inner">
+        <div className="btn-pagetop flex justify-end">
           <button aria-label="ページトップへ">
             <i className="icon icon-pagetop scroll-up"></i>
           </button>
