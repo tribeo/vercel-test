@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("/fonts/icomoon.ttf?h3b8we") format("truetype"),
+    url("/fonts/icomoon.woff?h3b8we") format("woff"),
+    url("/fonts/icomoon.svg?h3b8we#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-up:before {
+  content: "\e987";
+}
+
+.icon-accordion-minus:before {
+  content: "\e983";
+}
+
+.icon-accordion-plus:before {
+  content: "\e984";
+}
+
+.icon-pagetop:before {
+  content: "\e985";
+}
