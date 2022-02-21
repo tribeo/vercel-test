@@ -1,0 +1,111 @@
+.kov-pagenation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .kov-pagenation {
+    border-radius: 4px;
+    background-color: #ffffff !important;
+    border: 1px solid #f9f9f9;
+    box-shadow: 0px 0px 5px #0000001F;
+  }
+}
+
+.kov-pagenation > .kov-serv-btn {
+  margin: 0;
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  font-size: 55px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px #0000001F;
+  font-weight: bold;
+  color: #4b6a87;
+  box-shadow: 0px 0px 5px #0000001F !important;
+}
+
+@media screen and (max-width: 767px) {
+  .kov-pagenation > .kov-serv-btn {
+    border: none;
+    box-shadow: none !important;
+  }
+}
+
+.kov-pagenation > .kov-serv-btn.disabled {
+  background-color: #ffffff !important;
+  border: 1px solid #f9f9f9 !important;
+  box-shadow: 0px 0px 5px #0000001F !important;
+}
+
+.kov-pagenation > .kov-serv-btn.disabled .icon:before {
+  color: #dce6e8 !important;
+}
+
+@media screen and (max-width: 767px) {
+  .kov-pagenation > .kov-serv-btn.disabled {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.kov-pagenation .pagenation-btns-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 228px);
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid #f9f9f9;
+  box-shadow: 0px 0px 5px #0000001F;
+}
+
+@media screen and (max-width: 767px) {
+  .kov-pagenation .pagenation-btns-container {
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.kov-pagenation .pagenation-btns-container .pagenation-btn {
+  display: inline-flex;
+  margin: 0 10px;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 38px;
+  border-radius: 4px;
+  color: #4b6a87;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 767px) {
+  .kov-pagenation .pagenation-btns-container .pagenation-btn {
+    display: none;
+  }
+}
+
+.kov-pagenation .pagenation-btns-container .pagenation-btn:not(.current):hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.kov-pagenation .pagenation-btns-container .pagenation-btn.current {
+  background-color: #4b6a87;
+  color: #ffffff;
+}
+
+.kov-pagenation .pagenation-btns-container .page-info {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .kov-pagenation .pagenation-btns-container .page-info {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #717171;
+  }
+}

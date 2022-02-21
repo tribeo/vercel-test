@@ -31,6 +31,8 @@ body {
 /* Your own custom utilities */
 
 @import "./custom-utilities.css";
+@import "./pagination-list.css";
+
 
 .has-text-align-left {
   @apply text-left;
