@@ -1,7 +1,16 @@
 .top-posts-box {
-  display: flex;
-  justify-content: space-between;
   margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 33.5px;
+}
+
+.top-posts-box.multiple-rows > .post-box {
+  margin-bottom: 70px;
+}
+
+.top-posts-inner.sigle-row {
+  padding-bottom: 68px;
 }
 
 .view-more-btn {
@@ -11,11 +20,10 @@
 
 .top-posts-inner {
   padding-top: 46px;
-  padding-bottom: 68px;
 }
 
 .news {
-  border-top: 1px solid #E4E4E4;
+  border-top: 1px solid #e4e4e4;
 }
 
 .top-posts-container-header {
@@ -34,13 +42,31 @@
   font-weight: 400;
 }
 
+@media screen and (max-width: 1200px) {
+  .top-posts-box {
+    column-gap: 27.5px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .top-posts-box {
+    column-gap: 26px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .top-posts-box {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .top-posts-box.multiple-rows > .post-box {
+    margin-bottom: 0;
   }
 
   .top-posts-inner {
     padding-top: 30px;
+  }
+
+  .top-posts-inner.sigle-row {
     padding-bottom: 0;
   }
 
@@ -52,7 +78,7 @@
   .popular {
     border-radius: 6px 6px 0px 0px;
     margin-top: -36px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     z-index: 1;
   }
 

@@ -1,15 +1,15 @@
 import Head from "next/head";
-import Container from "../components/container";
-import Layout from "../components/layout";
-import { getAllPostsForHome, getAllCategories } from "../lib/api";
-import NavBar from "../components/nav-bar";
-import TopPosts from "../components/top-posts";
-import SgedIntro from "../components/sged-intro";
-import SgedProgrammingEducation from "../components/sged-programming-education";
-import SonyHeader from "../components/sony-header";
-import TopHeader from "../components/top-header";
-import PartnersSection from "../components/partners-section";
-import ScrollUp from "../components/scroll-up";
+import Container from "../../components/container";
+import Layout from "../../components/layout";
+import { getAllPostsForHome, getAllCategories } from "../../lib/api";
+import NavBar from "../../components/nav-bar";
+import TopPosts from "../../components/top-posts";
+import SgedIntro from "../../components/sged-intro";
+import SgedProgrammingEducation from "../../components/sged-programming-education";
+import SonyHeader from "../../components/sony-header";
+import TopHeader from "../../components/top-header";
+import PartnersSection from "../../components/partners-section";
+import ScrollUp from "../../components/scroll-up";
 
 export default function Index({ allPosts: { edges }, allCategories }) {
   const heroPost = edges[0]?.node;

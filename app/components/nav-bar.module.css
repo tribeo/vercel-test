@@ -1,8 +1,7 @@
 .categories-nav-box {
-  max-width: 1200px;
   margin: auto;
   font-size: 17px;
-  letter-spacing: 0.42px
+  letter-spacing: 0.42px;
 }
 
 .category-nav-item {
@@ -41,14 +40,28 @@
 }
 
 .nav-header {
+  max-width: 1200px;
+  margin: auto;
   justify-content: space-between;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   align-items: center;
   padding: 18px 33px;
 }
 
 .nav-logo {
+  width: auto;
+  height: 45px;
+  display: flex;
+}
+
+.sged-logo {
+  margin-right: 35px !important;
+  height: 100%;
   width: 118px;
+}
+
+.small-logo {
+  width: 203px;
 }
 
 .nav-inner {
@@ -56,24 +69,35 @@
   height: 100%;
 }
 
+.nav-container.sub-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 118px;
+  background-color: #f6f7f2;
+}
+
 @media screen and (min-width: 768px) {
   .nav-wrapper {
     height: 97px;
     display: block;
-    max-width: inherit;
-    position: absolute;
-    top: 710px;
-    left: 50%;
-    transform: translateX(-50%);
+    max-width: 1200px;
     z-index: 1;
     background-color: white;
     border-radius: 6px 6px 0px 0px;
   }
 
+  .nav-wrapper.home-page {
+    position: absolute;
+    top: 710px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .nav-inner {
     margin: auto;
     align-items: center;
-    border-bottom: 1px solid #E4E4E4;
+    border-bottom: 1px solid #e4e4e4;
   }
 }
 
@@ -99,7 +123,7 @@
 
 @media screen and (max-width: 767px) {
   .categories-nav-box {
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
     font-size: 18px;
     letter-spacing: 0.45px;
     line-height: 27px;
@@ -110,13 +134,35 @@
   }
 
   .nav-logo {
+    height: 30px;
+  }
+
+  .sged-logo {
+    margin-right: 15px !important;
     width: 79px;
+  }
+
+  .small-logo {
+    width: 138px;
+  }
+
+  .nav-container.sub-page {
+    height: auto;
+    min-height: 50px;
   }
 
   .nav-wrapper {
     overflow: hidden;
     max-height: 0;
     transition: max-height 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-wrapper.open.sub-page {
+    padding-bottom: 50px;
+  }
+
+  .nav-wrapper.open.sub-page > .nav-inner {
+    background-color: #f9f9f9;
   }
 
   .nav-wrapper.open {

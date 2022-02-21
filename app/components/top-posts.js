@@ -1,4 +1,4 @@
-import PostsPreview from "./posts-preview";
+import PostPreview from "./post-preview";
 import styles from "./top-posts.module.css";
 
 export default function TopPosts({
@@ -7,27 +7,29 @@ export default function TopPosts({
   enTitle,
   isViewMore,
   type,
+  size,
 }) {
   return (
     <section className="top-posts-container">
       <div
-        className={`inner ${styles["top-posts-inner"]} ${styles[type]}`}
+        className={`inner ${styles["top-posts-inner"]} ${styles[type]} ${styles[size]}`}
       >
         <h2 className={styles["top-posts-container-header"]}>{jpTitle}</h2>
         <h3 className={styles["top-posts-container-sub-header"]}>{enTitle}</h3>
-        <div className={styles["top-posts-box"]}>
+        <div className={`${styles["top-posts-box"]} ${styles[size]}`}>
           {posts.map(({ node }) => (
-            <PostsPreview
-              key={node.slug}
-              title={node.title}
-              coverImage={node.featuredImage?.node}
-              date={node.date}
-              author={node.author?.node}
-              slug={node.slug}
-              excerpt={node.excerpt}
-              categories={node.categories.edges}
-              isViewMore={isViewMore}
-            />
+            <div className={styles["post-box"]} key={node.slug}>
+              <PostPreview
+                databaseId={node.databaseId}
+                title={node.title}
+                coverImage={node.featuredImage?.node}
+                date={node.date}
+                author={node.author?.node}
+                slug={node.slug}
+                categories={node.categories.edges}
+                isViewMore={isViewMore}
+              />
+            </div>
           ))}
         </div>
         {isViewMore ? (

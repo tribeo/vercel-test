@@ -1,0 +1,42 @@
+.post-categories {
+  display: flex;
+  margin-top: 11px;
+}
+
+.post-category-item {
+  font-size: 11px;
+  font-weight: bold;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  color: white;
+}
+
+.post-category-item:not(:first-child) {
+  margin-left: 8px;
+}
+
+.post-category-item.education {
+  background-color: #faaa5a;
+}
+
+.post-category-item.it {
+  background-color: #f28063;
+}
+
+.post-category-item.programming {
+  background-color: #5fc3d2;
+}
+
+.post-category-item.robot {
+  background-color: #6cbc77;
+}
+
+.post-category-item.contest {
+  background-color: #bfb747;
+}
+
+.post-category-item.other {
+  background-color: #83a4d6;
+}

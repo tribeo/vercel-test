@@ -50,6 +50,7 @@ export async function getAllPostsWithSlug() {
         edges {
           node {
             slug
+            databaseId
           }
         }
       }
@@ -65,6 +66,7 @@ export async function getAllPostsForHome(preview) {
       posts(first: 20, where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
+            databaseId
             title
             excerpt
             slug
@@ -234,4 +236,110 @@ export async function getAllCategories() {
   `);
 
   return data?.categories;
+}
+
+export async function getAllPostsOfCategory(slug, preview) {
+  const data = await fetchAPI(
+    `
+    query AllPostsOfCategory($id: ID!, $idType: CategoryIdType!) {
+      category(id: $id, idType: $idType) {
+        name
+        slug
+        posts {
+          edges {
+            node {
+              databaseId
+              title
+              excerpt
+              slug
+              date
+              featuredImage {
+                node {
+                  sourceUrl
+                }
+              }
+              author {
+                node {
+                  name
+                  firstName
+                  lastName
+                  avatar {
+                    url
+                  }
+                }
+              }
+              categories {
+                edges {
+                  node {
+                    name
+                    slug
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        id: slug,
+        idType: "SLUG",
+        onlyEnabled: !preview,
+        preview,
+      },
+    }
+  );
+
+  return data?.category;
+}
+
+export async function getPostById(id, preview) {
+  const data = await fetchAPI(
+    `
+    query PostById($id: ID!, $idType: PostIdType!) {
+      post(id: $id, idType: $idType) {
+        databaseId
+        title
+        content
+        slug
+        date
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        author {
+          node {
+            name
+            firstName
+            lastName
+            avatar {
+              url
+            }
+          }
+        }
+        categories {
+          edges {
+            node {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `,
+    {
+      variables: {
+        id: id,
+        idType: "DATABASE_ID",
+        onlyEnabled: !preview,
+        preview,
+      },
+    }
+  );
+
+  return data?.post;
 }

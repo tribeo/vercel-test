@@ -28,7 +28,11 @@ export default function TopHeader() {
         STEAM教育・プログラミング教育・グローバル教育などの最新情報を発信していきます
       </div>
       <div className={`pc-only ${styles["large-banner"]}`}>
-        <Image src={bannerLarge} className="top-header-banner image-cover" />
+        <Image
+          src={bannerLarge}
+          className="top-header-banner image-cover"
+          priority
+        />
       </div>
       <div className={`mobile-only ${styles["small-banner"]}`}>
         <Image src={bannerSmall} className="top-header-banner image-cover" />
