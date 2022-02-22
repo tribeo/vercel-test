@@ -21,26 +21,38 @@ export default class PagenationList extends Component {
     currentPage = currentPage || 1;
     const totalPages = Math.ceil(totalResources.length / perPage);
 
-    this.state = {
-      resources: this._getResourcesByPage(1),
+    this.state = this._getIntitalState(this.props);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      JSON.stringify(prevProps.totalResources) !==
+      JSON.stringify(this.props.totalResources)
+    ) {
+      this.setState(this._getIntitalState(this.props));
+    }
+  }
+
+  _getIntitalState = (data) => {
+    let { totalResources, currentPage, perPage } = data;
+    currentPage = currentPage || 1;
+    const totalPages = Math.ceil(totalResources.length / perPage);
+
+    return {
       currentPage: currentPage,
       totalPages: totalPages,
     };
-  }
+  };
 
-  hasNextPage = () => {
+  _hasNextPage = () => {
     return (
       this.state.totalPages > 1 &&
       this.state.currentPage < this.state.totalPages
     );
   };
 
-  hasPrevPage = () => {
+  _hasPrevPage = () => {
     return this.state.currentPage > 1;
-  };
-
-  getRerources = () => {
-    return this.state.totalResources;
   };
 
   getResourceName() {
@@ -104,8 +116,8 @@ export default class PagenationList extends Component {
   }
 
   _renderResources() {
-    if (this.state.resources) {
-      if (this.state.resources.length == 0) {
+    if (this.props.totalResources) {
+      if (this.props.totalResources.length == 0) {
         return this.renderEmptyContent();
       }
       return (
@@ -190,7 +202,7 @@ export default class PagenationList extends Component {
   }
 
   _renderFirstBtn() {
-    if (!this.hasPrevPage()) {
+    if (!this._hasPrevPage()) {
       return (
         <a className='kov-serv-btn light-gray ignore-prevent-submission disabled'>
           {"<<"}
@@ -208,7 +220,7 @@ export default class PagenationList extends Component {
   }
 
   _renderPrevBtn() {
-    if (!this.hasPrevPage()) {
+    if (!this._hasPrevPage()) {
       return (
         <a className='kov-serv-btn light-gray ignore-prevent-submission disabled'>
           {"<"}
@@ -226,7 +238,7 @@ export default class PagenationList extends Component {
   }
 
   _renderNextBtn() {
-    if (!this.hasNextPage()) {
+    if (!this._hasNextPage()) {
       return (
         <a className='kov-serv-btn light-gray ignore-prevent-submission disabled'>
           {">"}
@@ -244,7 +256,7 @@ export default class PagenationList extends Component {
   }
 
   _renderLastBtn() {
-    if (!this.hasNextPage()) {
+    if (!this._hasNextPage()) {
       return (
         <a className='kov-serv-btn light-gray ignore-prevent-submission disabled'>
           {">>"}
@@ -265,19 +277,16 @@ export default class PagenationList extends Component {
     this._refreshResource(page);
   };
 
-  _getResourcesByPage = (page) => {
+  getCurrentResources = () => {
     const { totalResources, perPage } = this.props;
-    const start = (page - 1) * perPage;
+    const { currentPage } = this.state;
+    const start = (currentPage - 1) * perPage;
     const end = start + perPage;
     return totalResources.slice(start, end);
   };
 
   _refreshResource = (page) => {
-    const resources = this._getResourcesByPage(page);
-    this.setState({
-      resources: resources,
-      currentPage: page,
-    });
+    this.setState({ currentPage: page });
   };
 
   _genSearchUrl() {

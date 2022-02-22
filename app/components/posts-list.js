@@ -8,7 +8,7 @@ export default class PostsList extends PagenationList {
   }
 
   renderResources() {
-    const { resources } = this.state;
+    const resources = this.getCurrentResources();
     if (resources.length === 0) {
       return <span />;
     }
