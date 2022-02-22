@@ -4,14 +4,11 @@ import Container from "../../components/container";
 import Layout from "../../components/layout";
 import {
   getAllPostsWithSlug,
-  getPostAndMorePosts,
   getAllCategories,
   getAllPostsOfCategory,
   getPostById,
 } from "../../lib/api";
 import PostTitle from "../../components/post-title";
-import Head from "next/head";
-import TopPosts from "../../components/top-posts";
 import SonyHeader from "../../components/sony-header";
 import NavBar from "../../components/nav-bar";
 import SgedIntro from "../../components/sged-intro";
@@ -20,13 +17,7 @@ import PartnersSection from "../../components/partners-section";
 import ScrollUp from "../../components/scroll-up";
 import PostsOfCategory from "../../components/posts-of-category";
 
-export default function Post({
-  allCategories,
-  category,
-  post,
-  preview,
-  isId,
-}) {
+export default function Post({ allCategories, category, post, preview, isId }) {
   const router = useRouter();
   if (
     !router.isFallback &&
@@ -45,11 +36,13 @@ export default function Post({
         ) : (
           <>
             <SonyHeader />
-            <NavBar categories={allCategories} resourcePage="sub-page" />
+            <NavBar
+              categories={allCategories}
+              resourcePage="sub-page"
+              slugQuery={router.query?.slug}
+            />
 
-            {isId ? (
-              null
-            ) : (
+            {isId ? null : (
               <PostsOfCategory
                 allPosts={allPosts}
                 categoryName={category.name}

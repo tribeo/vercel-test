@@ -1,9 +1,9 @@
-import { Component } from "react";
+import { Component, Fragment } from "react";
 
 /**
  * You need to implements renderResources() and getResourceName() in sub class.
  */
-export default class PagenationList extends Component {
+export default class PaginationList extends Component {
   // static propTypes = {
   //   // hash of array
   //   totalResources: PropTypes.array,
@@ -75,12 +75,12 @@ export default class PagenationList extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <div className={`${this.getResourceName()}s-container`}>
           {this._renderResources()}
         </div>
-        {this._renderPagenation()}
-      </div>
+        {this._renderPagination()}
+      </Fragment>
     );
   }
 
@@ -121,23 +121,23 @@ export default class PagenationList extends Component {
         return this.renderEmptyContent();
       }
       return (
-        <div className={`${this.getResourceName()}-cards-container`}>
+        <Fragment>
           {this.renderFirstResource()}
           {this.renderResources()}
           {this.renderLastResource()}
-        </div>
+        </Fragment>
       );
     }
 
     return <span />;
   }
 
-  _renderPagenation() {
+  _renderPagination() {
     if (this.state.totalPages <= 1) {
       return <span />;
     }
     return (
-      <div className='kov-pagenation'>
+      <div className="kov-pagination">
         {this._renderFirstBtn()}
         {this._renderPrevBtn()}
         {this._renderBtns()}
@@ -174,15 +174,15 @@ export default class PagenationList extends Component {
       }
     }
     return (
-      <div className='pagenation-btns-container'>
-        <div className='page-info'>
+      <div className="pagination-btns-container">
+        <div className="page-info">
           {this.state.currentPage} / {this.state.totalPages}
         </div>
         {buttons.map((page) => {
-          let className = "pagenation-btn";
+          let className = "pagination-btn";
           if (this.state.currentPage == page) {
             return (
-              <div key={page} className='pagenation-btn current'>
+              <div key={page} className="pagination-btn current">
                 {page}
               </div>
             );
@@ -190,7 +190,7 @@ export default class PagenationList extends Component {
           return (
             <a
               key={page}
-              className='pagenation-btn'
+              className="pagination-btn"
               onClick={() => this._onPageMove(page)}
             >
               {page}
@@ -204,17 +204,17 @@ export default class PagenationList extends Component {
   _renderFirstBtn() {
     if (!this._hasPrevPage()) {
       return (
-        <a className='kov-serv-btn light-gray ignore-prevent-submission disabled'>
-          {"<<"}
+        <a className="kov-serv-btn light-gray ignore-prevent-submission disabled">
+          <i className="icon icon-pagination-first" />
         </a>
       );
     }
     return (
       <a
-        className='kov-serv-btn light-gray ignore-prevent-submission prev'
+        className="kov-serv-btn light-gray ignore-prevent-submission prev"
         onClick={() => this._onPageMove(1)}
       >
-        {"<<"}
+        <i className="icon icon-pagination-first" />
       </a>
     );
   }
@@ -222,17 +222,17 @@ export default class PagenationList extends Component {
   _renderPrevBtn() {
     if (!this._hasPrevPage()) {
       return (
-        <a className='kov-serv-btn light-gray ignore-prevent-submission disabled'>
-          {"<"}
+        <a className="kov-serv-btn light-gray ignore-prevent-submission disabled">
+          <i className="icon icon-pagination-prev" />
         </a>
       );
     }
     return (
       <a
-        className='kov-serv-btn light-gray ignore-prevent-submission prev'
+        className="kov-serv-btn light-gray ignore-prevent-submission prev"
         onClick={() => this._onPageMove(this.state.currentPage - 1)}
       >
-        {"<"}
+        <i className="icon icon-pagination-prev" />
       </a>
     );
   }
@@ -240,17 +240,17 @@ export default class PagenationList extends Component {
   _renderNextBtn() {
     if (!this._hasNextPage()) {
       return (
-        <a className='kov-serv-btn light-gray ignore-prevent-submission disabled'>
-          {">"}
+        <a className="kov-serv-btn light-gray ignore-prevent-submission disabled">
+          <i className="icon icon-pagination-next" />
         </a>
       );
     }
     return (
       <a
-        className='kov-serv-btn light-gray ignore-prevent-submission'
+        className="kov-serv-btn light-gray ignore-prevent-submission"
         onClick={() => this._onPageMove(this.state.currentPage + 1)}
       >
-        {">"}
+        <i className="icon icon-pagination-next" />
       </a>
     );
   }
@@ -258,17 +258,17 @@ export default class PagenationList extends Component {
   _renderLastBtn() {
     if (!this._hasNextPage()) {
       return (
-        <a className='kov-serv-btn light-gray ignore-prevent-submission disabled'>
-          {">>"}
+        <a className="kov-serv-btn light-gray ignore-prevent-submission disabled">
+          <i className="icon icon-pagination-last" />
         </a>
       );
     }
     return (
       <a
-        className='kov-serv-btn light-gray ignore-prevent-submission'
+        className="kov-serv-btn light-gray ignore-prevent-submission"
         onClick={() => this._onPageMove(this.state.totalPages)}
       >
-        {">>"}
+        <i className="icon icon-pagination-last" />
       </a>
     );
   }

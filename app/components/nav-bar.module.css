@@ -7,6 +7,7 @@
 .category-nav-item {
   height: 100%;
   padding: 0 20px;
+  margin: 0 3px;
   align-items: center;
   display: inline-flex;
   transform: perspective(1px) translateZ(0);
@@ -15,12 +16,13 @@
   overflow: hidden;
 }
 
-.category-nav-item:hover {
+.category-nav-item.disabled:hover, .category-nav-item.active {
+  color: #5285AF;
   opacity: 0.8;
   text-decoration: none;
 }
 
-.category-nav-item:hover::before {
+.category-nav-item.disabled:hover::before, .category-nav-item.active::before {
   transform: translateY(0);
 }
 
@@ -177,5 +179,22 @@
 
   .category-nav-item {
     padding: 11px 20px 11px 0;
+    margin: 0
+  }
+
+  .category-nav-item.active {
+    color: #5285AF;
+    font-weight: 600;
+  }
+
+  .category-nav-item.disabled:hover, .category-nav-item.active {
+    opacity: 1;
+    text-decoration: unset;
+    font-weight: 600;
+    color: #5285AF;
+  }
+
+  .category-nav-item.disabled:hover::before, .category-nav-item.active::before {
+    transform: translateY(3px);
   }
 }

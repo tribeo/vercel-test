@@ -55,3 +55,20 @@ i {
 .icon-pagetop:before {
   content: "\e985";
 }
+
+
+.icon-pagination-first:before {
+  content: "\e993";
+}
+
+.icon-pagination-prev:before {
+  content: "\e997";
+}
+
+.icon-pagination-next:before {
+  content: "\e996";
+}
+
+.icon-pagination-last:before {
+  content: "\e995";
+}

@@ -1,8 +1,8 @@
-import PagenationList from "./pagenation-list";
+import PaginationList from "./utils/pagination-list";
 import PostPreview from "./post-preview";
 import styles from "./top-posts.module.css";
 
-export default class PostsList extends PagenationList {
+export default class PostsList extends PaginationList {
   getResourceName() {
     return "post";
   }

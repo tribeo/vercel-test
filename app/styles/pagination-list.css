@@ -1,11 +1,10 @@
-.kov-pagenation {
+.kov-pagination {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
 }
 
 @media screen and (max-width: 767px) {
-  .kov-pagenation {
+  .kov-pagination {
     border-radius: 4px;
     background-color: #ffffff !important;
     border: 1px solid #f9f9f9;
@@ -13,12 +12,12 @@
   }
 }
 
-.kov-pagenation > .kov-serv-btn {
+.kov-pagination > .kov-serv-btn {
   margin: 0;
   display: inline-flex;
   width: 50px;
   height: 50px;
-  font-size: 55px;
+  font-size: 50px;
   border-radius: 4px;
   box-shadow: 0px 0px 5px #0000001F;
   font-weight: bold;
@@ -27,30 +26,30 @@
 }
 
 @media screen and (max-width: 767px) {
-  .kov-pagenation > .kov-serv-btn {
+  .kov-pagination > .kov-serv-btn {
     border: none;
     box-shadow: none !important;
   }
 }
 
-.kov-pagenation > .kov-serv-btn.disabled {
+.kov-pagination > .kov-serv-btn.disabled {
   background-color: #ffffff !important;
   border: 1px solid #f9f9f9 !important;
   box-shadow: 0px 0px 5px #0000001F !important;
 }
 
-.kov-pagenation > .kov-serv-btn.disabled .icon:before {
+.kov-pagination > .kov-serv-btn.disabled .icon:before {
   color: #dce6e8 !important;
 }
 
 @media screen and (max-width: 767px) {
-  .kov-pagenation > .kov-serv-btn.disabled {
+  .kov-pagination > .kov-serv-btn.disabled {
     border: none !important;
     box-shadow: none !important;
   }
 }
 
-.kov-pagenation .pagenation-btns-container {
+.kov-pagination .pagination-btns-container {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -62,13 +61,13 @@
 }
 
 @media screen and (max-width: 767px) {
-  .kov-pagenation .pagenation-btns-container {
+  .kov-pagination .pagination-btns-container {
     border: none;
     box-shadow: none;
   }
 }
 
-.kov-pagenation .pagenation-btns-container .pagenation-btn {
+.kov-pagination .pagination-btns-container .pagination-btn {
   display: inline-flex;
   margin: 0 10px;
   justify-content: center;
@@ -81,27 +80,27 @@
 }
 
 @media screen and (max-width: 767px) {
-  .kov-pagenation .pagenation-btns-container .pagenation-btn {
+  .kov-pagination .pagination-btns-container .pagination-btn {
     display: none;
   }
 }
 
-.kov-pagenation .pagenation-btns-container .pagenation-btn:not(.current):hover {
+.kov-pagination .pagination-btns-container .pagination-btn:not(.current):hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-.kov-pagenation .pagenation-btns-container .pagenation-btn.current {
+.kov-pagination .pagination-btns-container .pagination-btn.current {
   background-color: #4b6a87;
   color: #ffffff;
 }
 
-.kov-pagenation .pagenation-btns-container .page-info {
+.kov-pagination .pagination-btns-container .page-info {
   display: none;
 }
 
 @media screen and (max-width: 767px) {
-  .kov-pagenation .pagenation-btns-container .page-info {
+  .kov-pagination .pagination-btns-container .page-info {
     display: inline-flex;
     justify-content: center;
     align-items: center;

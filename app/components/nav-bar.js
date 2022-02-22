@@ -7,7 +7,7 @@ import headerMenuClose from "../public/header_menu_close.svg";
 import sgedLogo from "../public/sged_logo.png";
 import logoSmall from "../public/logo_small@2x.png";
 
-export default function NavBar({ categories, resourcePage }) {
+export default function NavBar({ categories, resourcePage, slugQuery }) {
   const [toggleMenu, setToogleMenu] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -21,9 +21,7 @@ export default function NavBar({ categories, resourcePage }) {
 
   return (
     <div>
-      <nav
-        className={`${styles["categories-nav-box"]} w-full`}
-      >
+      <nav className={`${styles["categories-nav-box"]} w-full`}>
         <div className={`${styles["nav-header"]} flex`}>
           <div className={styles["nav-logo"]}>
             <div className={styles["sged-logo"]}>
@@ -58,7 +56,10 @@ export default function NavBar({ categories, resourcePage }) {
                   <Link href={`/column/${category.node.slug}`} key={index}>
                     <a
                       className={`${styles["category-nav-item"]} flex ${
-                        activeMenu && activeMenu === index ? "active" : ""
+                        (activeMenu && activeMenu === index) ||
+                        category.node.slug === slugQuery
+                          ? styles["active"]
+                          : styles["disabled"]
                       }`}
                       dangerouslySetInnerHTML={{ __html: category.node.name }}
                       onClick={() => handleMenuClick(index)}
