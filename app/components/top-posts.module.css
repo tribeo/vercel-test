@@ -9,9 +9,14 @@
   margin-bottom: 70px;
 }
 
-.top-posts-inner.sigle-row {
+.top-posts-inner.single-row {
+  padding-bottom: 68px;
+}
+
+.top-posts-inner.with-load-more {
   padding-bottom: 18px;
 }
+
 
 .view-more-btn {
   margin-top: 72px;
@@ -66,7 +71,7 @@
     padding-top: 30px;
   }
 
-  .top-posts-inner.sigle-row {
+  .top-posts-inner.single-row {
     padding-bottom: 0;
   }
 
