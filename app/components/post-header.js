@@ -1,31 +1,34 @@
-import Avatar from '../components/avatar'
-import Date from '../components/date'
-import CoverImage from '../components/cover-image'
-import PostTitle from '../components/post-title'
+import Date from "../components/date";
+import PostTitle from "../components/post-title";
+import CategoryTags from "./category-tags";
+import CoverImage from "./cover-image";
 
 export default function PostHeader({
   title,
-  coverImage,
   date,
-  author,
+  categories,
+  slug,
+  coverImage,
+  databaseId,
 }) {
   return (
-    <>
+    <div className="post-header text-center">
       <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12">
-        <Avatar author={author} />
+
+      <div className="post-date">
+        <Date dateString={date} />
       </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} coverImage={coverImage} />
+      <CategoryTags categories={categories?.edges} />
+      <div className="post-cover">
+        {coverImage && (
+          <CoverImage
+            title={title}
+            coverImage={coverImage}
+            slug={slug}
+            databaseId={databaseId}
+          />
+        )}
       </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6">
-          <Avatar author={author} />
-        </div>
-        <div className="mb-6 text-lg">
-          Posted <Date dateString={date} />
-        </div>
-      </div>
-    </>
-  )
+    </div>
+  );
 }

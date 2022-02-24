@@ -1,11 +1,11 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function Avatar({ author }) {
   const name = author
     ? author.firstName && author.lastName
       ? `${author.firstName} ${author.lastName}`
       : author.name
-    : null
+    : null;
 
   return (
     <div className="flex items-center">
@@ -17,7 +17,6 @@ export default function Avatar({ author }) {
           alt={name}
         />
       </div>
-      <div className="text-xl font-bold">{name}</div>
     </div>
-  )
+  );
 }

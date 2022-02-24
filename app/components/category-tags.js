@@ -2,9 +2,9 @@ import styles from "./category-tags.module.css";
 
 export default function CategoryTags({ categories }) {
   return (
-    <div className="category-tags">
+    <>
       {categories.length > 0 ? (
-        <div className={styles["post-categories"]}>
+        <div className={`${styles["post-categories"]} category-tags-container`}>
           {categories.map((category, index) => (
             <div
               key={index}
@@ -16,6 +16,6 @@ export default function CategoryTags({ categories }) {
           ))}
         </div>
       ) : null}
-    </div>
+    </>
   );
 }

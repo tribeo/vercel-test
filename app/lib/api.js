@@ -315,6 +315,7 @@ export async function getPostById(id, preview) {
             name
             firstName
             lastName
+            description
             avatar {
               url
             }

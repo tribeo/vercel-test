@@ -18,7 +18,11 @@ export default function NavBar({ categories, resourcePage, slugQuery }) {
   const handleMenuClick = (index) => {
     setActiveMenu(index);
   };
-
+  console.log({
+    activeMenu: activeMenu,
+    slugQuery: slugQuery,
+    resourcePage: resourcePage,
+  });
   return (
     <div>
       <nav className={`${styles["categories-nav-box"]} w-full`}>
@@ -56,8 +60,10 @@ export default function NavBar({ categories, resourcePage, slugQuery }) {
                   <Link href={`/column/${category.node.slug}`} key={index}>
                     <a
                       className={`${styles["category-nav-item"]} flex ${
-                        (activeMenu && activeMenu === index) ||
-                        category.node.slug === slugQuery
+                        ((activeMenu && activeMenu === index) ||
+                          category.node.slug === slugQuery) &&
+                        slugQuery &&
+                        !Number.isInteger(Number(slugQuery))
                           ? styles["active"]
                           : styles["disabled"]
                       }`}

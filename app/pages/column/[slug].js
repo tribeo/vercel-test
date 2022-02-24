@@ -1,8 +1,10 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
+import { Fragment } from "react/cjs/react.production.min";
 import Container from "../../components/container";
 import Layout from "../../components/layout";
 import {
+  getAllPostsForHome,
   getAllPostsWithSlug,
   getAllCategories,
   getAllPostsOfCategory,
@@ -16,8 +18,17 @@ import SgedProgrammingEducation from "../../components/sged-programming-educatio
 import PartnersSection from "../../components/partners-section";
 import ScrollUp from "../../components/scroll-up";
 import PostsOfCategory from "../../components/posts-of-category";
+import PostDetail from "../../components/post-detail";
+import TopPosts from "../../components/top-posts";
 
-export default function Post({ allCategories, category, post, preview, isId }) {
+export default function Post({
+  allCategories,
+  category,
+  post,
+  preview,
+  isId,
+  popularPosts,
+}) {
   const router = useRouter();
   if (
     !router.isFallback &&
@@ -42,14 +53,31 @@ export default function Post({ allCategories, category, post, preview, isId }) {
               slugQuery={router.query?.slug}
             />
 
-            {isId ? null : (
-              <PostsOfCategory
-                allPosts={allPosts}
-                categoryName={category.name}
-              />
+            {isId ? (
+              <Fragment>
+                <PostDetail post={post} />
+
+                {popularPosts.length > 0 && (
+                  <TopPosts
+                    posts={popularPosts}
+                    jpTitle="人気の記事"
+                    enTitle="Popular"
+                    isViewMore={false}
+                    type="popular-detail"
+                    size="single-row"
+                  />
+                )}
+              </Fragment>
+            ) : (
+              <Fragment>
+                <PostsOfCategory
+                  allPosts={allPosts}
+                  categoryName={category.name}
+                />
+                <SgedIntro />
+              </Fragment>
             )}
 
-            <SgedIntro />
             <SgedProgrammingEducation />
             <PartnersSection />
 
@@ -65,6 +93,8 @@ export async function getStaticProps({ params, preview = false, previewData }) {
   const allCategories = await getAllCategories();
   const isId = Number.isInteger(Number(params.slug));
 
+  const allPosts = await getAllPostsForHome();
+
   if (isId) {
     const post = await getPostById(params.slug, preview);
     return {
@@ -73,6 +103,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
         allCategories: allCategories,
         preview: preview,
         isId: isId,
+        popularPosts: allPosts?.edges.slice(0, 6),
       },
     };
   } else {

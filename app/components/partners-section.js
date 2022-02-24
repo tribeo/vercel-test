@@ -55,7 +55,7 @@ export default function PartnersSection() {
                     <a href="#" className={`${styles["kov-link"]} flex w-full`}>
                       <span>{prefecture}</span>
                       <i
-                        className={`${styles["icon-arrow-right"]} icon-arrow-up`}
+                        className={`${styles["icon-arrow-right"]} icon-arrow-right`}
                       ></i>
                     </a>
                   </div>

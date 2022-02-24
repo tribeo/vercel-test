@@ -40,7 +40,7 @@
 .icon-arrow-right {
   display: block;
   font-size: 20px;
-  transform: rotateZ(90deg);
+  line-height: 32px;
 }
 
 .icon-plus,

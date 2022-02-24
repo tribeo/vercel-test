@@ -26,7 +26,9 @@ i {
 [class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
+  font-family: icomoon, Lato, 游ゴシック体, Yu Gothic, YuGothic,
+    ヒラギノ角ゴシック Pro, Hiragino Kaku Gothic Pro, メイリオ, Meiryo,
+    ＭＳ\Ｐゴシック, MS PGothic, "sans-serif" !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -44,6 +46,10 @@ i {
   content: "\e987";
 }
 
+.icon-arrow-right:before {
+  content: "\e947";
+}
+
 .icon-accordion-minus:before {
   content: "\e983";
 }
@@ -55,7 +61,6 @@ i {
 .icon-pagetop:before {
   content: "\e985";
 }
-
 
 .icon-pagination-first:before {
   content: "\e993";
@@ -71,4 +76,8 @@ i {
 
 .icon-pagination-last:before {
   content: "\e995";
+}
+
+.icon-tag:before {
+  content: "\e998";
 }
