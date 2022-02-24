@@ -13,7 +13,7 @@ import ScrollUp from "../../components/scroll-up";
 
 export default function Index({ allPosts: { edges }, allCategories }) {
   const heroPost = edges[0]?.node;
-  const previewPosts = edges.slice(0, 3);
+  const previewPosts = edges.slice(0, 6);
 
   return (
     <>

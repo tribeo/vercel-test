@@ -44,7 +44,6 @@ export default function Post({ post, posts, preview }) {
                 coverImage={post.featuredImage?.node}
                 date={post.date}
                 author={post.author?.node}
-                categories={post.categories}
               />
               <PostBody content={post.content} />
               <footer>

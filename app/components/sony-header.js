@@ -5,7 +5,7 @@ export default function SonyHeader() {
   return (
     <header className="sony-header">
       <a
-        href="https://www.sony.co.jp"
+        href="https://www.sony.com/ja/"
         target="_blank"
         rel="noopener noreferrer"
         className="w-full flex bg-black"
