@@ -1,14 +1,15 @@
 module.exports = {
   images: {
-    domains: ['www-stg.koov.io', 'secure.gravatar.com'],
+    domains: ["www-stg.koov.io", "secure.gravatar.com"],
   },
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/column',
+        source: "/",
+        destination: "/column",
         permanent: true,
       },
-    ]
+    ];
   },
+
 };

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PostPreview from "./post-preview";
 import styles from "./top-posts.module.css";
 
@@ -33,7 +34,9 @@ export default function TopPosts({
           ))}
         </div>
         {isViewMore ? (
-          <div className={`kov-btn ${styles["view-more-btn"]}`}>もっと見る</div>
+          <Link href={`/column/news`}>
+            <a className={`kov-btn ${styles["view-more-btn"]}`}>もっと見る</a>
+          </Link>
         ) : null}
       </div>
     </section>

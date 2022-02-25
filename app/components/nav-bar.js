@@ -18,11 +18,7 @@ export default function NavBar({ categories, resourcePage, slugQuery }) {
   const handleMenuClick = (index) => {
     setActiveMenu(index);
   };
-  console.log({
-    activeMenu: activeMenu,
-    slugQuery: slugQuery,
-    resourcePage: resourcePage,
-  });
+
   return (
     <div>
       <nav className={`${styles["categories-nav-box"]} w-full`}>
@@ -32,9 +28,11 @@ export default function NavBar({ categories, resourcePage, slugQuery }) {
               <Image src={sgedLogo} alt="Sony Global Education logo" />
             </div>
             {resourcePage === "sub-page" ? (
-              <div className={styles["small-logo"]}>
-                <Image src={logoSmall} alt="" />
-              </div>
+              <Link href={`/column`}>
+                <a className={styles["small-logo"]}>
+                  <Image src={logoSmall} alt="" />
+                </a>
+              </Link>
             ) : null}
           </div>
           <div className="mobile-only">
