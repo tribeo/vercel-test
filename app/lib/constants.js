@@ -54,3 +54,4 @@ export const JAPAN_AREA_PREFECTURES = {
 };
 export const CURRENT_PAGE = 1;
 export const PER_PAGE = 9;
+export const KOOV_URL = "https://www.koov.io";

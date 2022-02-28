@@ -1,6 +1,7 @@
 import { useState } from "react";
+import Link from "next/link";
 import styles from "./partners-section.module.css";
-import { JAPAN_AREA_PREFECTURES } from "../lib/constants";
+import { JAPAN_AREA_PREFECTURES, KOOV_URL } from "../lib/constants";
 
 export default function PartnersSection() {
   const [activeIndex, setActiveIndex] = useState([]);
@@ -52,12 +53,14 @@ export default function PartnersSection() {
                     className={`${styles["prefecture-name"]} flex items-center`}
                     key={`prefecture-${a_index}-${p_index}`}
                   >
-                    <a href="#" className={`${styles["kov-link"]} flex w-full`}>
-                      <span>{prefecture}</span>
-                      <i
-                        className={`${styles["icon-arrow-right"]} icon-arrow-right`}
-                      ></i>
-                    </a>
+                    <Link href={`${KOOV_URL}/schools/prefectures/${prefecture}`}>
+                      <a className={`${styles["kov-link"]} flex w-full`}>
+                        <span>{prefecture}</span>
+                        <i
+                          className={`${styles["icon-arrow-right"]} icon-arrow-right`}
+                        ></i>
+                      </a>
+                    </Link>
                   </div>
                 ))}
               </div>
