@@ -33,7 +33,7 @@ export default function Index({ allPosts: { edges }, allCategories }) {
               enTitle="Popular"
               isViewMore={false}
               type="popular"
-              size="single-row"
+              size="multiple-rows"
             />
           )}
 
@@ -44,7 +44,7 @@ export default function Index({ allPosts: { edges }, allCategories }) {
               enTitle="News"
               isViewMore={true}
               type="news"
-              size="with-load-more"
+              size="multiple-rows"
             />
           )}
 
