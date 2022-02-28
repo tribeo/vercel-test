@@ -3,6 +3,7 @@ import ErrorPage from "next/error";
 import { Fragment } from "react/cjs/react.production.min";
 import Container from "../../components/container";
 import Layout from "../../components/layout";
+import Head from "next/head";
 import {
   getAllPostsForHome,
   getAllPostsWithSlug,
@@ -41,6 +42,9 @@ export default function Post({
 
   return (
     <Layout>
+      <Head>
+        <title>{isId ? post.title : `記事一覧 | ${category?.name}`}</title>
+      </Head>
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>

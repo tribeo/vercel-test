@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Container from "../../components/container";
 import Layout from "../../components/layout";
 import { getAllPostsForHome, getAllCategories } from "../../lib/api";
@@ -12,12 +13,12 @@ import PostsOfCategory from "../../components/posts-of-category";
 export default function News({ allPosts: { edges }, allCategories }) {
   return (
     <Layout>
+      <Head>
+        <title>新着記事</title>
+      </Head>
       <Container>
         <SonyHeader />
-        <NavBar
-          categories={allCategories}
-          resourcePage="sub-page"
-        />
+        <NavBar categories={allCategories} resourcePage="sub-page" />
 
         <PostsOfCategory
           allPosts={edges}
