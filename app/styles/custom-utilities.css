@@ -35,6 +35,7 @@
 }
 
 .section-header {
+  font-family: "NotoSansCJKjp", "Montserrat", "NotoSans", sans-serif !important;
   margin: auto;
   text-align: center;
   font-size: 30px;

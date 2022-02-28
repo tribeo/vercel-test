@@ -19,6 +19,79 @@
 @import "./post-detail.css";
 @import "./the-thor-style.css";
 
+@font-face {
+  font-family: "NotoSansCJKjp";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/fonts/NotoSansCJKjp-Light.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/NotoSansCJKjp-Light.woff") format("woff"),
+    url("/fonts/NotoSansCJKjp-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NotoSansCJKjp";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/NotoSansCJKjp-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/NotoSansCJKjp-Regular.woff") format("woff"),
+    url("/fonts/NotoSansCJKjp-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("/fonts/NotoSans-Regular.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/NotoSans-Regular.woff") format("woff"),
+    url("/fonts/NotoSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSansCJKsc";
+  font-style: normal;
+  font-weight: 100;
+  src: url("/fonts/NotoSansCJKsc-Light-6500.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/NotoSansCJKsc-Light-6500.woff") format("woff"),
+    url("/fonts/NotoSansCJKsc-Light-6500.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NotoSansCJKsc";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/NotoSansCJKsc-Regular-6500.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/NotoSansCJKsc-Regular-6500.woff") format("woff"),
+    url("/fonts/NotoSansCJKsc-Regular-6500.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Regular.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Montserrat-Regular.woff") format("woff"),
+    url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Montserrat-Bold.woff") format("woff"),
+    url("/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+html[lang="ja"] h1 {
+  font-family: "NotoSansCJKjp", "NotoSans", sans-serif; }
+
+html[lang="ja"] div, html[lang="ja"] h2, html[lang="ja"] h3, html[lang="ja"] h4, html[lang="ja"] h5, html[lang="ja"] p, html[lang="ja"] ul, html[lang="ja"] li, html[lang="ja"] a {
+  font-family: "NotoSansCJKjp", "NotoSans", sans-serif; }
+
+html[lang="ja"] [class^="icon-"] span:not(:empty), html[lang="ja"] [class*=" icon-"] span:not(:empty) {
+  font-family: "NotoSansCJKjp", "NotoSans", sans-serif !important; }
+
 .has-text-align-left {
   @apply text-left;
 }
@@ -65,10 +138,10 @@
   @apply table ml-0 mr-0;
 }
 
-.wp-block-image .alignleft>figcaption,
-.wp-block-image .alignright>figcaption,
-.wp-block-image .aligncenter>figcaption,
-.wp-block-image.is-resized>figcaption {
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption,
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image.is-resized > figcaption {
   @apply table-caption;
 
   caption-side: bottom;
