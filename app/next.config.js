@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ["www-stg.koov.io", "secure.gravatar.com", "assets.vercel.com"],
+    domains: ["www-stg.koov.io", "secure.gravatar.com"],
   },
   async redirects() {
     return [
